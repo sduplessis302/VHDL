@@ -1,0 +1,35 @@
+entity bcd_converter is 
+	port(
+		BCD				: in std_logic_vector(3 downto 0);
+		charAddress		: out std_logic_vector(5 downto 0);
+	);
+end entity;
+
+architecture behaviour of bcd_converter is ]
+begin 
+process(BCD)
+	begin 
+	case BCD is 
+		when "0000" is =>
+			charAddress <= "110000";
+		when "0001" is =>
+			charAddress <= "110001";
+		when "0010" is =>
+			charAddress <= "110010";
+		when "0011" is =>
+			charAddress <= "110011";
+		when "0100" is =>
+			charAddress <= "110100";
+		when "0101" is =>
+			charAddress <= "110101";
+		when "0110" is =>
+			charAddress <= "110110";
+		when "0111" is =>
+			charAddress <= "110111";
+		when "1000" is =>
+			charAddress <= "111000";
+		when others is =>
+			charAddress <= "111001";
+		end case;
+end process;
+end behaviour;

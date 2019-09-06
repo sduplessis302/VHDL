@@ -1,0 +1,21 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
+
+entity health is 
+	port( Collision : in std_logic;
+			Health : out std_logic_vector(1 downto 0) := "11"
+			);
+end health;
+
+architecture behaviour of health is 
+begin 
+	process(Collision)
+	begin 
+	if (Collision = '1') then 
+		Health <= Health - '1';
+	end if;
+		
+	end process; 
+end behaviour; 

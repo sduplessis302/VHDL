@@ -1,0 +1,43 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE IEEE.NUMERIC_STD.ALL;
+USE  IEEE.STD_LOGIC_ARITH.all;
+USE  IEEE.STD_LOGIC_UNSIGNED.all;
+LIBRARY lpm;
+USE lpm.lpm_components.ALL;
+
+PACKAGE de0core1 IS
+	COMPONENT vga_sync
+ 		PORT(clock_25Mhz, red, green, blue	: IN	STD_LOGIC;
+         	red_out, green_out, blue_out	: OUT 	STD_LOGIC;
+			horiz_sync_out, vert_sync_out	: OUT 	STD_LOGIC;
+			pixel_row, pixel_column			: OUT STD_LOGIC_VECTOR(9 DOWNTO 0));
+	END COMPONENT;
+END de0core1;
+
+			-- Bouncing pipe Video 
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_SIGNED.all;
+LIBRARY work;
+USE work.de0core1.all;
+
+entity healthPack is 
+	port(
+		  SIGNAL Clock 						: IN std_logic;
+        SIGNAL Red,Green,Blue 			: OUT std_logic;
+		  --SIGNAL Red,Green,Blue 			: OUT std_logic;
+		  SIGNAL health_State				: OUT std_logic;
+		  SIGNAL randomIn						: IN std_LOGIC_VECTOR(7 downto 0);
+		  signal pipeX							: in std_logic_vector(10 downto 0)
+	);
+end entity;
+
+architecture behaviour of healthPack is 
+begin 
+process	
+	begin 
+	
+end process;
+end behaviour;

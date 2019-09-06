@@ -1,0 +1,11 @@
+entity levels is 
+	port();
+end entity;
+
+architecture behaviour of levels is 
+begin 
+process
+	begin
+	
+end process;
+end behaviour;

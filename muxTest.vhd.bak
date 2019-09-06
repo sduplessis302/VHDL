@@ -1,0 +1,19 @@
+entity muxTest is 
+	port(
+	Clock : in std_logic;
+	Pause : in std_logic;
+	Output	: out std_logic
+	);
+end entity; 
+
+architecture behaviour of muxTest is 
+begin
+process(Clock, Pause)
+	begin
+	if (Pause = '1') then 
+		Output <= '0';
+	else 
+		Output <= '1';
+	end if;
+end process 
+end behaviour; 

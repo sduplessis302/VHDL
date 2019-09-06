@@ -1,0 +1,20 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
+
+entity char_Controller is 
+	port(
+		vga_Xpos		: in (9 downto 0);
+		vga_Ypos		: in (9 downto 0);
+		charAddress	: out ();
+	);
+end entity;
+
+architecture behaviour of char_Controller is 
+begin 
+process 
+	begin 
+	
+end process;
+end behaviour;

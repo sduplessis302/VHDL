@@ -1,0 +1,23 @@
+entity disp_mux is 
+	port( BallX, BallY, CurrentX, CurrentY : in std_logic_vector(9 downto 0);
+			Ball_red, Ball_green, Ball_blue : in std_logic;
+			char : in std_logic;
+			Red_out, Green_out, Blue_out : out std_logic;
+			);
+end disp_mux;
+
+architecture behaviour of disp_mux is 
+begin 
+process(CurrentX, CurrentY)
+	begin 
+		if (BallX == CurrentX)&&(BallY == CurrentY) then 
+			Red_out <= Ball_red;
+			Green_out <= Ball_green;
+			Blue_out <= Ball_blue;
+		else 
+			Red_out <= '0';
+			Green_out <= char;
+			Blue_out <= char;
+		end if;
+end process; 
+end behaviour; 

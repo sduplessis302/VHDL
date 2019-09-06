@@ -1,0 +1,40 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
+
+entity collision is 
+	port( PipeX, PipeY, BallX, BallY : in std_logic_vector(9 downto 0);
+			Collision : out std_logic
+			);
+end collision;
+
+architecture behaviour of collision is 
+begin 
+	process(CurrentX, CurrentY, pipe_state, ball_state)
+	begin 
+	
+		if (pipe_state = '1')then 
+			Red_out <= Pipe_red;
+			Green_out <= Pipe_green;
+			Blue_out <= Pipe_blue;
+		elsif (ball_state = '1') then
+			Red_out <= Ball_red;
+			Green_out <= Ball_green;
+			Blue_out <= Ball_blue;
+		elsif (currentX > 500) then 
+			Blue_out <= '1';
+			Red_out <= '0';
+			Green_out <= '0';
+		elsif (CurrentY < 80 and CurrentY > 16) then 
+			Red_out <= not(char);
+			Green_out <= not(char);
+			Blue_out <= not(char);
+		else 
+			Red_out <= Ball_red;
+			Green_out <= Ball_green;
+			Blue_out <= Ball_blue;
+		end if;
+		
+	end process; 
+end behaviour; 

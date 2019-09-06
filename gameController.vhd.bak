@@ -1,0 +1,29 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE IEEE.STD_LOGIC_ARITH.all;
+USE IEEE.STD_LOGIC_UNSIGNED.all;
+
+entity gameController is 
+	port(
+	Clock				: in std_logic;
+	Button			: in std_logic;
+	State_out			: out std_logic_vector(1 downto 0)
+	);
+entity;
+
+architecture behaviour of gameController is 
+	signal State : std_logic_vector(1 downto 0) := "00"
+begin 
+process(Clock, Button) 
+	begin 
+		
+		if (State = "00") then 
+				if (Button = '1') then 
+					State <= "01";
+				end if;
+		end if;
+		
+		
+	State_out <= State;
+end process;
+end behaviour;
